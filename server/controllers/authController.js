@@ -51,8 +51,11 @@ export const login = async (req, res, next) => {
   try {
     const { email, password } = req.body;
 
+    console.log('Login attempt for:', email);
+
     // Validate input
     if (!email || !password) {
+      console.log('Login failed: Missing email or password');
       return res.status(400).json({
         success: false,
         message: 'Please provide email and password'
@@ -61,7 +64,17 @@ export const login = async (req, res, next) => {
 
     // Check for user
     const user = await User.findOne({ email }).select('+password');
-    if (!user || !user.isActive) {
+    
+    if (!user) {
+      console.log('Login failed: User not found -', email);
+      return res.status(401).json({
+        success: false,
+        message: 'Invalid credentials'
+      });
+    }
+
+    if (!user.isActive) {
+      console.log('Login failed: User inactive -', email);
       return res.status(401).json({
         success: false,
         message: 'Invalid credentials'
@@ -71,6 +84,7 @@ export const login = async (req, res, next) => {
     // Check password
     const isMatch = await user.comparePassword(password);
     if (!isMatch) {
+      console.log('Login failed: Invalid password -', email);
       return res.status(401).json({
         success: false,
         message: 'Invalid credentials'
@@ -79,6 +93,8 @@ export const login = async (req, res, next) => {
 
     // Generate token
     const token = generateToken(user._id);
+
+    console.log('Login successful:', email);
 
     res.json({
       success: true,
@@ -95,6 +111,7 @@ export const login = async (req, res, next) => {
       }
     });
   } catch (error) {
+    console.error('Login error:', error);
     next(error);
   }
 };
