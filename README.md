@@ -2,6 +2,12 @@
 
 A complete, production-ready full-stack web application for digitizing clinic and hospital operations.
 
+## 🌐 Live Demo
+
+- **Application**: https://smart-patient-management-system.vercel.app
+- **Backend API**: https://smart-patient-management-system.onrender.com
+- **Demo Login**: admin@spms.com / admin123
+
 ## 🚀 Features
 
 ### Core Functionality

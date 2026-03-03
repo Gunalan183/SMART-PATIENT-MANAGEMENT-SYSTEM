@@ -1,0 +1,108 @@
+═══════════════════════════════════════════════════════════════
+  SMART PATIENT MANAGEMENT SYSTEM - DEPLOYMENT CONFIG
+═══════════════════════════════════════════════════════════════
+
+📍 YOUR LIVE URLS:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Frontend: https://smart-patient-management-system.vercel.app
+Backend:  https://smart-patient-management-system.onrender.com
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+⚙️ RENDER CONFIGURATION (Backend):
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Go to: https://dashboard.render.com
+Service: smart-patient-management-system
+Tab: Environment
+
+ADD/UPDATE THIS VARIABLE:
+┌─────────────┬──────────────────────────────────────────────────────┐
+│ Variable    │ Value                                                │
+├─────────────┼──────────────────────────────────────────────────────┤
+│ CLIENT_URL  │ https://smart-patient-management-system.vercel.app   │
+└─────────────┴──────────────────────────────────────────────────────┘
+
+Then: Click "Save Changes" → Wait for auto-redeploy (2-3 min)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+⚙️ VERCEL CONFIGURATION (Frontend):
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Go to: https://vercel.com/dashboard
+Project: smart-patient-management-system
+Tab: Settings → Environment Variables
+
+ADD/UPDATE THIS VARIABLE:
+┌──────────────────┬────────────────────────────────────────────────────┐
+│ Variable         │ Value                                              │
+├──────────────────┼────────────────────────────────────────────────────┤
+│ VITE_API_URL     │ https://smart-patient-management-system.onrender. │
+│                  │ com/api                                            │
+└──────────────────┴────────────────────────────────────────────────────┘
+
+Then: Deployments → Click "..." → Redeploy (2-3 min)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🗄️ SEED DATABASE (Create Admin User):
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Run this in your terminal (Windows PowerShell):
+
+curl -X POST https://smart-patient-management-system.onrender.com/api/auth/register `
+  -H "Content-Type: application/json" `
+  -d '{\"name\":\"Admin User\",\"email\":\"admin@spms.com\",\"password\":\"admin123\",\"role\":\"admin\"}'
+
+OR use Postman:
+POST: https://smart-patient-management-system.onrender.com/api/auth/register
+Body (JSON):
+{
+  "name": "Admin User",
+  "email": "admin@spms.com",
+  "password": "admin123",
+  "role": "admin"
+}
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ TEST YOUR APP:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+1. Test Backend:
+   https://smart-patient-management-system.onrender.com/api/health
+   Should show: {"success":true,"message":"Server is running"}
+
+2. Login to Frontend:
+   https://smart-patient-management-system.vercel.app
+   Email: admin@spms.com
+   Password: admin123
+
+3. Test Features:
+   ✓ Dashboard
+   ✓ Add Patient
+   ✓ Book Appointment
+   ✓ Create Medical Record
+   ✓ Generate Bill
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📊 MONITOR:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Render Logs:  https://dashboard.render.com → Logs
+Vercel Logs:  https://vercel.com/dashboard → Deployments
+MongoDB:      https://cloud.mongodb.com
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+⚠️ TROUBLESHOOTING:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Network Error?
+→ Check CLIENT_URL in Render (no trailing slash!)
+→ Check VITE_API_URL in Vercel
+→ Redeploy both services
+
+Backend Slow?
+→ Free tier sleeps after 15 min
+→ First request takes 30-60 seconds (normal)
+
+Can't Login?
+→ Seed database first (see above)
+→ Check backend logs in Render
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🎉 YOUR APP IS LIVE!
+Visit: https://smart-patient-management-system.vercel.app
+
+═══════════════════════════════════════════════════════════════
