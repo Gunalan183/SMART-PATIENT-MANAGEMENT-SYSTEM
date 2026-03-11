@@ -128,7 +128,7 @@ const Billing = () => {
   return (
     <div className="space-y-6">
       <div className="flex justify-between items-center">
-        <h2 className="text-2xl font-bold text-gray-800">Billing & Invoice</h2>
+        <h2 className="text-2xl font-bold text-gray-800 dark:text-white">Billing & Invoice</h2>
         <button
           onClick={() => {
             resetForm();
@@ -141,7 +141,7 @@ const Billing = () => {
         </button>
       </div>
 
-      <div className="bg-white rounded-lg shadow-sm p-6">
+      <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm p-6">
         <Table columns={columns} data={bills} />
       </div>
 
@@ -156,7 +156,7 @@ const Billing = () => {
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="grid grid-cols-2 gap-4">
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Patient *</label>
+              <label className="block text-sm font-medium text-gray-700 dark:text-white mb-1">Patient *</label>
               <select
                 required
                 value={formData.patient}
@@ -172,7 +172,7 @@ const Billing = () => {
               </select>
             </div>
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Doctor</label>
+              <label className="block text-sm font-medium text-gray-700 dark:text-white mb-1">Doctor</label>
               <select
                 value={formData.doctor}
                 onChange={(e) => setFormData({ ...formData, doctor: e.target.value })}
@@ -190,7 +190,7 @@ const Billing = () => {
 
           <div className="grid grid-cols-3 gap-4">
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Consultation Fee</label>
+              <label className="block text-sm font-medium text-gray-700 dark:text-white mb-1">Consultation Fee</label>
               <input
                 type="number"
                 value={formData.consultationFee}
@@ -199,7 +199,7 @@ const Billing = () => {
               />
             </div>
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Lab Fee</label>
+              <label className="block text-sm font-medium text-gray-700 dark:text-white mb-1">Lab Fee</label>
               <input
                 type="number"
                 value={formData.labFee}
@@ -208,7 +208,7 @@ const Billing = () => {
               />
             </div>
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Medicine Fee</label>
+              <label className="block text-sm font-medium text-gray-700 dark:text-white mb-1">Medicine Fee</label>
               <input
                 type="number"
                 value={formData.medicineFee}
@@ -220,7 +220,7 @@ const Billing = () => {
 
           <div className="grid grid-cols-3 gap-4">
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Discount (%)</label>
+              <label className="block text-sm font-medium text-gray-700 dark:text-white mb-1">Discount (%)</label>
               <input
                 type="number"
                 min="0"
@@ -231,7 +231,7 @@ const Billing = () => {
               />
             </div>
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Payment Status</label>
+              <label className="block text-sm font-medium text-gray-700 dark:text-white mb-1">Payment Status</label>
               <select
                 value={formData.paymentStatus}
                 onChange={(e) => setFormData({ ...formData, paymentStatus: e.target.value })}
@@ -243,7 +243,7 @@ const Billing = () => {
               </select>
             </div>
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Payment Method</label>
+              <label className="block text-sm font-medium text-gray-700 dark:text-white mb-1">Payment Method</label>
               <select
                 value={formData.paymentMethod}
                 onChange={(e) => setFormData({ ...formData, paymentMethod: e.target.value })}

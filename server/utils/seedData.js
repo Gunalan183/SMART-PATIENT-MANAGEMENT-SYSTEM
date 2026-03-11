@@ -237,111 +237,269 @@ const seedData = async () => {
           phone: '9876543239',
           relation: 'Brother'
         }
+      },
+      {
+        patientId: 'P240011',
+        name: 'Vikram Mehta',
+        age: 48,
+        gender: 'Male',
+        phone: '9876543240',
+        address: '567 Residency Road, Bangalore - 560025',
+        bloodGroup: 'B+',
+        allergies: 'None',
+        emergencyContact: {
+          name: 'Priya Mehta',
+          phone: '9876543241',
+          relation: 'Wife'
+        }
+      },
+      {
+        patientId: 'P240012',
+        name: 'Neha Agarwal',
+        age: 33,
+        gender: 'Female',
+        phone: '9876543242',
+        address: '789 Connaught Place, Delhi - 110001',
+        bloodGroup: 'O+',
+        allergies: 'Dust',
+        emergencyContact: {
+          name: 'Rahul Agarwal',
+          phone: '9876543243',
+          relation: 'Husband'
+        }
+      },
+      {
+        patientId: 'P240013',
+        name: 'Suresh Iyer',
+        age: 52,
+        gender: 'Male',
+        phone: '9876543244',
+        address: '234 T Nagar, Chennai - 600017',
+        bloodGroup: 'AB+',
+        allergies: 'Shellfish',
+        emergencyContact: {
+          name: 'Lakshmi Iyer',
+          phone: '9876543245',
+          relation: 'Wife'
+        }
+      },
+      {
+        patientId: 'P240014',
+        name: 'Pooja Saxena',
+        age: 27,
+        gender: 'Female',
+        phone: '9876543246',
+        address: '456 Hazratganj, Lucknow - 226001',
+        bloodGroup: 'A-',
+        allergies: 'None',
+        emergencyContact: {
+          name: 'Amit Saxena',
+          phone: '9876543247',
+          relation: 'Father'
+        }
+      },
+      {
+        patientId: 'P240015',
+        name: 'Aditya Rao',
+        age: 41,
+        gender: 'Male',
+        phone: '9876543248',
+        address: '678 Banjara Hills, Hyderabad - 500034',
+        bloodGroup: 'O-',
+        allergies: 'Penicillin',
+        emergencyContact: {
+          name: 'Kavita Rao',
+          phone: '9876543249',
+          relation: 'Wife'
+        }
       }
     ]);
     console.log(`✅ Created ${patients.length} patients\n`);
 
     // Create appointments
     console.log('📅 Creating appointments...');
-    const today = new Date();
-    const yesterday = new Date(today);
-    yesterday.setDate(yesterday.getDate() - 1);
-    const tomorrow = new Date(today);
-    tomorrow.setDate(tomorrow.getDate() + 1);
-    const nextWeek = new Date(today);
-    nextWeek.setDate(nextWeek.getDate() + 7);
+    
+    // Create specific dates for March 11-20, 2026
+    const march11 = new Date('2026-03-11');
+    const march12 = new Date('2026-03-12');
+    const march13 = new Date('2026-03-13');
+    const march14 = new Date('2026-03-14');
+    const march15 = new Date('2026-03-15');
+    const march16 = new Date('2026-03-16');
+    const march17 = new Date('2026-03-17');
+    const march18 = new Date('2026-03-18');
+    const march19 = new Date('2026-03-19');
+    const march20 = new Date('2026-03-20');
 
     const appointments = await Appointment.create([
-      // Today's appointments
+      // March 11, 2026
       {
         patient: patients[0]._id,
         doctor: doctors[0]._id,
-        date: today,
+        date: march11,
         time: '09:00 AM',
         reason: 'General Checkup',
-        status: 'Scheduled'
+        status: 'Completed'
       },
       {
         patient: patients[1]._id,
         doctor: doctors[1]._id,
-        date: today,
-        time: '10:00 AM',
+        date: march11,
+        time: '10:30 AM',
         reason: 'Heart Consultation',
-        status: 'Scheduled'
+        status: 'Completed'
       },
+      // March 12, 2026
       {
         patient: patients[2]._id,
-        doctor: doctors[0]._id,
-        date: today,
-        time: '11:00 AM',
-        reason: 'Fever and Cold',
-        status: 'Scheduled'
+        doctor: doctors[2]._id,
+        date: march12,
+        time: '09:00 AM',
+        reason: 'Child Vaccination',
+        status: 'Completed'
       },
       {
         patient: patients[3]._id,
-        doctor: doctors[2]._id,
-        date: today,
-        time: '02:00 PM',
-        reason: 'Child Vaccination',
-        status: 'Scheduled'
+        doctor: doctors[3]._id,
+        date: march12,
+        time: '11:00 AM',
+        reason: 'Skin Allergy',
+        status: 'Completed'
       },
-      // Yesterday's appointments (completed)
+      // March 13, 2026
       {
         patient: patients[4]._id,
-        doctor: doctors[0]._id,
-        date: yesterday,
+        doctor: doctors[4]._id,
+        date: march13,
         time: '10:00 AM',
-        reason: 'Follow-up',
+        reason: 'Knee Pain',
         status: 'Completed'
       },
       {
         patient: patients[5]._id,
-        doctor: doctors[3]._id,
-        date: yesterday,
+        doctor: doctors[0]._id,
+        date: march13,
+        time: '02:00 PM',
+        reason: 'Fever and Cold',
+        status: 'Completed'
+      },
+      // March 14, 2026
+      {
+        patient: patients[6]._id,
+        doctor: doctors[1]._id,
+        date: march14,
+        time: '09:30 AM',
+        reason: 'Chest Pain',
+        status: 'Completed'
+      },
+      {
+        patient: patients[7]._id,
+        doctor: doctors[2]._id,
+        date: march14,
         time: '11:30 AM',
+        reason: 'Baby Checkup',
+        status: 'Completed'
+      },
+      // March 15, 2026
+      {
+        patient: patients[8]._id,
+        doctor: doctors[3]._id,
+        date: march15,
+        time: '10:00 AM',
         reason: 'Skin Rash',
         status: 'Completed'
       },
       {
-        patient: patients[6]._id,
-        doctor: doctors[1]._id,
-        date: yesterday,
+        patient: patients[9]._id,
+        doctor: doctors[4]._id,
+        date: march15,
         time: '03:00 PM',
-        reason: 'Chest Pain',
+        reason: 'Back Pain',
         status: 'Completed'
       },
-      // Tomorrow's appointments
+      // March 16, 2026
       {
-        patient: patients[7]._id,
-        doctor: doctors[4]._id,
-        date: tomorrow,
-        time: '09:30 AM',
-        reason: 'Knee Pain',
-        status: 'Scheduled'
-      },
-      {
-        patient: patients[8]._id,
+        patient: patients[10]._id,
         doctor: doctors[0]._id,
-        date: tomorrow,
-        time: '11:00 AM',
+        date: march16,
+        time: '09:00 AM',
         reason: 'Diabetes Checkup',
+        status: 'Completed'
+      },
+      {
+        patient: patients[11]._id,
+        doctor: doctors[1]._id,
+        date: march16,
+        time: '11:00 AM',
+        reason: 'Blood Pressure Check',
+        status: 'Completed'
+      },
+      // March 17, 2026
+      {
+        patient: patients[12]._id,
+        doctor: doctors[2]._id,
+        date: march17,
+        time: '10:00 AM',
+        reason: 'Child Fever',
         status: 'Scheduled'
       },
       {
-        patient: patients[9]._id,
-        doctor: doctors[2]._id,
-        date: tomorrow,
-        time: '02:30 PM',
-        reason: 'Child Health Checkup',
+        patient: patients[13]._id,
+        doctor: doctors[3]._id,
+        date: march17,
+        time: '02:00 PM',
+        reason: 'Acne Treatment',
         status: 'Scheduled'
       },
-      // Next week appointments
+      // March 18, 2026
+      {
+        patient: patients[14]._id,
+        doctor: doctors[4]._id,
+        date: march18,
+        time: '09:30 AM',
+        reason: 'Shoulder Pain',
+        status: 'Scheduled'
+      },
       {
         patient: patients[0]._id,
+        doctor: doctors[0]._id,
+        date: march18,
+        time: '11:30 AM',
+        reason: 'Follow-up',
+        status: 'Scheduled'
+      },
+      // March 19, 2026
+      {
+        patient: patients[1]._id,
         doctor: doctors[1]._id,
-        date: nextWeek,
+        date: march19,
         time: '10:00 AM',
-        reason: 'Follow-up Consultation',
+        reason: 'Heart Follow-up',
+        status: 'Scheduled'
+      },
+      {
+        patient: patients[2]._id,
+        doctor: doctors[2]._id,
+        date: march19,
+        time: '02:30 PM',
+        reason: 'Vaccination Follow-up',
+        status: 'Scheduled'
+      },
+      // March 20, 2026
+      {
+        patient: patients[3]._id,
+        doctor: doctors[3]._id,
+        date: march20,
+        time: '09:00 AM',
+        reason: 'Skin Check',
+        status: 'Scheduled'
+      },
+      {
+        patient: patients[4]._id,
+        doctor: doctors[4]._id,
+        date: march20,
+        time: '11:00 AM',
+        reason: 'Physiotherapy',
         status: 'Scheduled'
       }
     ]);
@@ -349,11 +507,13 @@ const seedData = async () => {
 
     // Create medical records for completed appointments
     console.log('📋 Creating medical records...');
+    const march25 = new Date('2026-03-25');
+    
     const medicalRecords = await MedicalRecord.create([
       {
-        patient: patients[4]._id,
+        patient: patients[0]._id,
         doctor: doctors[0]._id,
-        visitDate: yesterday,
+        visitDate: march11,
         symptoms: 'Headache, fatigue, mild fever',
         diagnosis: 'Viral Fever',
         medicines: [
@@ -371,7 +531,7 @@ const seedData = async () => {
           }
         ],
         labTests: 'Complete Blood Count (CBC)',
-        followUpDate: nextWeek,
+        followUpDate: march25,
         notes: 'Advised rest and plenty of fluids',
         vitalSigns: {
           bloodPressure: '120/80',
@@ -381,11 +541,65 @@ const seedData = async () => {
         }
       },
       {
-        patient: patients[5]._id,
+        patient: patients[1]._id,
+        doctor: doctors[1]._id,
+        visitDate: march11,
+        symptoms: 'Chest discomfort, palpitations',
+        diagnosis: 'Mild Arrhythmia',
+        medicines: [
+          {
+            name: 'Beta Blocker',
+            dosage: '25mg',
+            frequency: 'Once daily',
+            duration: '30 days'
+          },
+          {
+            name: 'Aspirin',
+            dosage: '75mg',
+            frequency: 'Once daily',
+            duration: '30 days'
+          }
+        ],
+        labTests: 'ECG, Echocardiogram',
+        followUpDate: march25,
+        notes: 'Reduce caffeine intake, regular exercise',
+        vitalSigns: {
+          bloodPressure: '135/85',
+          temperature: '98.6°F',
+          pulse: '92 bpm',
+          weight: '68 kg'
+        }
+      },
+      {
+        patient: patients[2]._id,
+        doctor: doctors[2]._id,
+        visitDate: march12,
+        symptoms: 'Routine vaccination',
+        diagnosis: 'Healthy - Vaccination administered',
+        medicines: [
+          {
+            name: 'MMR Vaccine',
+            dosage: '0.5ml',
+            frequency: 'Single dose',
+            duration: '1 day'
+          }
+        ],
+        labTests: 'None',
+        followUpDate: new Date('2026-04-12'),
+        notes: 'Child is healthy, next vaccination due in 1 month',
+        vitalSigns: {
+          bloodPressure: 'N/A',
+          temperature: '98.4°F',
+          pulse: '95 bpm',
+          weight: '15 kg'
+        }
+      },
+      {
+        patient: patients[3]._id,
         doctor: doctors[3]._id,
-        visitDate: yesterday,
-        symptoms: 'Red itchy rash on arms and legs',
-        diagnosis: 'Allergic Dermatitis',
+        visitDate: march12,
+        symptoms: 'Red itchy patches on skin',
+        diagnosis: 'Contact Dermatitis',
         medicines: [
           {
             name: 'Cetirizine',
@@ -400,9 +614,9 @@ const seedData = async () => {
             duration: '7 days'
           }
         ],
-        labTests: 'Allergy Test',
-        followUpDate: new Date(yesterday.getTime() + 14 * 24 * 60 * 60 * 1000),
-        notes: 'Avoid contact with potential allergens',
+        labTests: 'Allergy Patch Test',
+        followUpDate: new Date('2026-03-26'),
+        notes: 'Avoid contact with irritants',
         vitalSigns: {
           bloodPressure: '118/76',
           temperature: '98.6°F',
@@ -411,9 +625,69 @@ const seedData = async () => {
         }
       },
       {
+        patient: patients[4]._id,
+        doctor: doctors[4]._id,
+        visitDate: march13,
+        symptoms: 'Knee pain, difficulty walking',
+        diagnosis: 'Osteoarthritis - Mild',
+        medicines: [
+          {
+            name: 'Ibuprofen',
+            dosage: '400mg',
+            frequency: 'Twice daily',
+            duration: '15 days'
+          },
+          {
+            name: 'Calcium Supplement',
+            dosage: '500mg',
+            frequency: 'Once daily',
+            duration: '30 days'
+          }
+        ],
+        labTests: 'X-Ray Knee Joint',
+        followUpDate: new Date('2026-03-27'),
+        notes: 'Physiotherapy recommended, avoid strenuous activities',
+        vitalSigns: {
+          bloodPressure: '125/82',
+          temperature: '98.6°F',
+          pulse: '75 bpm',
+          weight: '75 kg'
+        }
+      },
+      {
+        patient: patients[5]._id,
+        doctor: doctors[0]._id,
+        visitDate: march13,
+        symptoms: 'Fever, cough, sore throat',
+        diagnosis: 'Upper Respiratory Tract Infection',
+        medicines: [
+          {
+            name: 'Azithromycin',
+            dosage: '500mg',
+            frequency: 'Once daily',
+            duration: '3 days'
+          },
+          {
+            name: 'Cough Syrup',
+            dosage: '10ml',
+            frequency: '3 times a day',
+            duration: '5 days'
+          }
+        ],
+        labTests: 'Throat Swab',
+        followUpDate: new Date('2026-03-20'),
+        notes: 'Rest, warm fluids, steam inhalation',
+        vitalSigns: {
+          bloodPressure: '115/75',
+          temperature: '100.2°F',
+          pulse: '82 bpm',
+          weight: '62 kg'
+        }
+      },
+      {
         patient: patients[6]._id,
         doctor: doctors[1]._id,
-        visitDate: yesterday,
+        visitDate: march14,
         symptoms: 'Chest pain, shortness of breath',
         diagnosis: 'Angina - Mild',
         medicines: [
@@ -437,13 +711,157 @@ const seedData = async () => {
           }
         ],
         labTests: 'ECG, Lipid Profile, Cardiac Enzymes',
-        followUpDate: new Date(yesterday.getTime() + 7 * 24 * 60 * 60 * 1000),
-        notes: 'Advised lifestyle modifications, low-fat diet, regular exercise',
+        followUpDate: new Date('2026-03-21'),
+        notes: 'Lifestyle modifications, low-fat diet, regular exercise',
         vitalSigns: {
           bloodPressure: '140/90',
           temperature: '98.4°F',
           pulse: '88 bpm',
           weight: '82 kg'
+        }
+      },
+      {
+        patient: patients[7]._id,
+        doctor: doctors[2]._id,
+        visitDate: march14,
+        symptoms: 'Baby routine checkup',
+        diagnosis: 'Healthy - Normal growth',
+        medicines: [
+          {
+            name: 'Vitamin D Drops',
+            dosage: '400 IU',
+            frequency: 'Once daily',
+            duration: '30 days'
+          }
+        ],
+        labTests: 'None',
+        followUpDate: new Date('2026-04-14'),
+        notes: 'Baby is developing well, continue breastfeeding',
+        vitalSigns: {
+          bloodPressure: 'N/A',
+          temperature: '98.2°F',
+          pulse: '110 bpm',
+          weight: '8 kg'
+        }
+      },
+      {
+        patient: patients[8]._id,
+        doctor: doctors[3]._id,
+        visitDate: march15,
+        symptoms: 'Skin rash, itching',
+        diagnosis: 'Eczema',
+        medicines: [
+          {
+            name: 'Moisturizing Cream',
+            dosage: 'Apply liberally',
+            frequency: 'Twice daily',
+            duration: '30 days'
+          },
+          {
+            name: 'Antihistamine',
+            dosage: '10mg',
+            frequency: 'Once at night',
+            duration: '14 days'
+          }
+        ],
+        labTests: 'None',
+        followUpDate: new Date('2026-03-29'),
+        notes: 'Keep skin moisturized, avoid harsh soaps',
+        vitalSigns: {
+          bloodPressure: '120/78',
+          temperature: '98.6°F',
+          pulse: '74 bpm',
+          weight: '65 kg'
+        }
+      },
+      {
+        patient: patients[9]._id,
+        doctor: doctors[4]._id,
+        visitDate: march15,
+        symptoms: 'Lower back pain',
+        diagnosis: 'Lumbar Strain',
+        medicines: [
+          {
+            name: 'Muscle Relaxant',
+            dosage: '10mg',
+            frequency: 'Twice daily',
+            duration: '7 days'
+          },
+          {
+            name: 'Pain Relief Gel',
+            dosage: 'Apply',
+            frequency: '3 times daily',
+            duration: '10 days'
+          }
+        ],
+        labTests: 'X-Ray Lumbar Spine',
+        followUpDate: new Date('2026-03-22'),
+        notes: 'Physiotherapy sessions recommended, avoid heavy lifting',
+        vitalSigns: {
+          bloodPressure: '122/80',
+          temperature: '98.6°F',
+          pulse: '76 bpm',
+          weight: '72 kg'
+        }
+      },
+      {
+        patient: patients[10]._id,
+        doctor: doctors[0]._id,
+        visitDate: march16,
+        symptoms: 'High blood sugar, fatigue',
+        diagnosis: 'Type 2 Diabetes - Controlled',
+        medicines: [
+          {
+            name: 'Metformin',
+            dosage: '500mg',
+            frequency: 'Twice daily',
+            duration: '30 days'
+          },
+          {
+            name: 'Multivitamin',
+            dosage: '1 tablet',
+            frequency: 'Once daily',
+            duration: '30 days'
+          }
+        ],
+        labTests: 'HbA1c, Fasting Blood Sugar',
+        followUpDate: new Date('2026-04-16'),
+        notes: 'Diet control, regular exercise, monitor blood sugar',
+        vitalSigns: {
+          bloodPressure: '130/85',
+          temperature: '98.6°F',
+          pulse: '80 bpm',
+          weight: '78 kg'
+        }
+      },
+      {
+        patient: patients[11]._id,
+        doctor: doctors[1]._id,
+        visitDate: march16,
+        symptoms: 'High blood pressure, headache',
+        diagnosis: 'Hypertension - Stage 1',
+        medicines: [
+          {
+            name: 'Amlodipine',
+            dosage: '5mg',
+            frequency: 'Once daily',
+            duration: '30 days'
+          },
+          {
+            name: 'Aspirin',
+            dosage: '75mg',
+            frequency: 'Once daily',
+            duration: '30 days'
+          }
+        ],
+        labTests: 'Lipid Profile, Kidney Function Test',
+        followUpDate: new Date('2026-04-16'),
+        notes: 'Low salt diet, stress management, regular monitoring',
+        vitalSigns: {
+          bloodPressure: '145/92',
+          temperature: '98.6°F',
+          pulse: '85 bpm',
+          weight: '80 kg'
         }
       }
     ]);
@@ -453,8 +871,8 @@ const seedData = async () => {
     console.log('💰 Creating bills...');
     const bills = await Bill.create([
       {
-        invoiceId: 'INV240001',
-        patient: patients[4]._id,
+        invoiceId: 'INV260001',
+        patient: patients[0]._id,
         doctor: doctors[0]._id,
         consultationFee: 500,
         labFee: 800,
@@ -463,11 +881,37 @@ const seedData = async () => {
         totalAmount: 1567.5,
         paymentStatus: 'Paid',
         paymentMethod: 'Cash',
-        date: yesterday
+        date: new Date('2026-03-11')
       },
       {
-        invoiceId: 'INV240002',
-        patient: patients[5]._id,
+        invoiceId: 'INV260002',
+        patient: patients[1]._id,
+        doctor: doctors[1]._id,
+        consultationFee: 1000,
+        labFee: 2500,
+        medicineFee: 800,
+        discount: 10,
+        totalAmount: 3870,
+        paymentStatus: 'Paid',
+        paymentMethod: 'Card',
+        date: new Date('2026-03-11')
+      },
+      {
+        invoiceId: 'INV260003',
+        patient: patients[2]._id,
+        doctor: doctors[2]._id,
+        consultationFee: 600,
+        labFee: 0,
+        medicineFee: 1200,
+        discount: 0,
+        totalAmount: 1800,
+        paymentStatus: 'Paid',
+        paymentMethod: 'UPI',
+        date: new Date('2026-03-12')
+      },
+      {
+        invoiceId: 'INV260004',
+        patient: patients[3]._id,
         doctor: doctors[3]._id,
         consultationFee: 800,
         labFee: 1200,
@@ -476,10 +920,36 @@ const seedData = async () => {
         totalAmount: 2205,
         paymentStatus: 'Paid',
         paymentMethod: 'Card',
-        date: yesterday
+        date: new Date('2026-03-12')
       },
       {
-        invoiceId: 'INV240003',
+        invoiceId: 'INV260005',
+        patient: patients[4]._id,
+        doctor: doctors[4]._id,
+        consultationFee: 900,
+        labFee: 1500,
+        medicineFee: 600,
+        discount: 5,
+        totalAmount: 2850,
+        paymentStatus: 'Paid',
+        paymentMethod: 'Cash',
+        date: new Date('2026-03-13')
+      },
+      {
+        invoiceId: 'INV260006',
+        patient: patients[5]._id,
+        doctor: doctors[0]._id,
+        consultationFee: 500,
+        labFee: 600,
+        medicineFee: 400,
+        discount: 0,
+        totalAmount: 1500,
+        paymentStatus: 'Paid',
+        paymentMethod: 'UPI',
+        date: new Date('2026-03-13')
+      },
+      {
+        invoiceId: 'INV260007',
         patient: patients[6]._id,
         doctor: doctors[1]._id,
         consultationFee: 1000,
@@ -488,34 +958,112 @@ const seedData = async () => {
         discount: 0,
         totalAmount: 4700,
         paymentStatus: 'Paid',
-        paymentMethod: 'UPI',
-        date: yesterday
+        paymentMethod: 'Insurance',
+        date: new Date('2026-03-14')
       },
       {
-        invoiceId: 'INV240004',
-        patient: patients[0]._id,
+        invoiceId: 'INV260008',
+        patient: patients[7]._id,
+        doctor: doctors[2]._id,
+        consultationFee: 600,
+        labFee: 0,
+        medicineFee: 250,
+        discount: 0,
+        totalAmount: 850,
+        paymentStatus: 'Paid',
+        paymentMethod: 'Cash',
+        date: new Date('2026-03-14')
+      },
+      {
+        invoiceId: 'INV260009',
+        patient: patients[8]._id,
+        doctor: doctors[3]._id,
+        consultationFee: 800,
+        labFee: 0,
+        medicineFee: 550,
+        discount: 5,
+        totalAmount: 1282.5,
+        paymentStatus: 'Paid',
+        paymentMethod: 'Card',
+        date: new Date('2026-03-15')
+      },
+      {
+        invoiceId: 'INV260010',
+        patient: patients[9]._id,
+        doctor: doctors[4]._id,
+        consultationFee: 900,
+        labFee: 1800,
+        medicineFee: 450,
+        discount: 10,
+        totalAmount: 2835,
+        paymentStatus: 'Paid',
+        paymentMethod: 'UPI',
+        date: new Date('2026-03-15')
+      },
+      {
+        invoiceId: 'INV260011',
+        patient: patients[10]._id,
         doctor: doctors[0]._id,
         consultationFee: 500,
-        labFee: 0,
-        medicineFee: 0,
+        labFee: 1000,
+        medicineFee: 700,
         discount: 0,
-        totalAmount: 500,
-        paymentStatus: 'Pending',
+        totalAmount: 2200,
+        paymentStatus: 'Paid',
         paymentMethod: 'Cash',
-        date: today
+        date: new Date('2026-03-16')
       },
       {
-        invoiceId: 'INV240005',
-        patient: patients[1]._id,
+        invoiceId: 'INV260012',
+        patient: patients[11]._id,
         doctor: doctors[1]._id,
         consultationFee: 1000,
         labFee: 1500,
+        medicineFee: 600,
+        discount: 5,
+        totalAmount: 2945,
+        paymentStatus: 'Paid',
+        paymentMethod: 'Card',
+        date: new Date('2026-03-16')
+      },
+      {
+        invoiceId: 'INV260013',
+        patient: patients[12]._id,
+        doctor: doctors[2]._id,
+        consultationFee: 600,
+        labFee: 0,
         medicineFee: 0,
         discount: 0,
-        totalAmount: 2500,
+        totalAmount: 600,
+        paymentStatus: 'Pending',
+        paymentMethod: 'Cash',
+        date: new Date('2026-03-17')
+      },
+      {
+        invoiceId: 'INV260014',
+        patient: patients[13]._id,
+        doctor: doctors[3]._id,
+        consultationFee: 800,
+        labFee: 500,
+        medicineFee: 0,
+        discount: 0,
+        totalAmount: 1300,
         paymentStatus: 'Pending',
         paymentMethod: 'Card',
-        date: today
+        date: new Date('2026-03-17')
+      },
+      {
+        invoiceId: 'INV260015',
+        patient: patients[14]._id,
+        doctor: doctors[4]._id,
+        consultationFee: 900,
+        labFee: 0,
+        medicineFee: 0,
+        discount: 0,
+        totalAmount: 900,
+        paymentStatus: 'Pending',
+        paymentMethod: 'UPI',
+        date: new Date('2026-03-18')
       }
     ]);
     console.log(`✅ Created ${bills.length} bills\n`);
@@ -528,7 +1076,7 @@ const seedData = async () => {
     console.log('📊 Summary:');
     console.log(`   • Users: ${users.length} (1 Admin, 5 Doctors, 1 Receptionist)`);
     console.log(`   • Patients: ${patients.length}`);
-    console.log(`   • Appointments: ${appointments.length}`);
+    console.log(`   • Appointments: ${appointments.length} (March 11-20, 2026)`);
     console.log(`   • Medical Records: ${medicalRecords.length}`);
     console.log(`   • Bills: ${bills.length}\n`);
 

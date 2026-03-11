@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
 import { AuthProvider } from './context/AuthContext';
+import { ThemeProvider } from './context/ThemeContext';
 import { useAuth } from './hooks/useAuth';
 import MainLayout from './layouts/MainLayout';
 import Login from './pages/auth/Login';
@@ -10,6 +11,8 @@ import Patients from './pages/Patients';
 import Appointments from './pages/Appointments';
 import MedicalRecords from './pages/MedicalRecords';
 import Billing from './pages/Billing';
+import Analytics from './pages/Analytics';
+import AIAssistant from './pages/AIAssistant';
 
 const PrivateRoute = ({ children }) => {
   const { isAuthenticated, loading } = useAuth();
@@ -39,6 +42,8 @@ const AppRoutes = () => {
         <Route path="appointments" element={<Appointments />} />
         <Route path="medical-records" element={<MedicalRecords />} />
         <Route path="billing" element={<Billing />} />
+        <Route path="analytics" element={<Analytics />} />
+        <Route path="ai-assistant" element={<AIAssistant />} />
         <Route path="register-user" element={<Register />} />
       </Route>
     </Routes>
@@ -48,10 +53,21 @@ const AppRoutes = () => {
 function App() {
   return (
     <BrowserRouter>
-      <AuthProvider>
-        <AppRoutes />
-        <Toaster position="top-right" />
-      </AuthProvider>
+      <ThemeProvider>
+        <AuthProvider>
+          <AppRoutes />
+          <Toaster 
+            position="top-right"
+            toastOptions={{
+              className: 'dark:bg-gray-800 dark:text-white',
+              style: {
+                background: 'var(--toast-bg)',
+                color: 'var(--toast-color)',
+              },
+            }}
+          />
+        </AuthProvider>
+      </ThemeProvider>
     </BrowserRouter>
   );
 }

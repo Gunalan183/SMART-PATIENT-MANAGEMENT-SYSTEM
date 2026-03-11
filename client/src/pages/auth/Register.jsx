@@ -47,14 +47,14 @@ const Register = () => {
 
   return (
     <div className="space-y-6">
-      <h2 className="text-2xl font-bold text-gray-800">Register New User</h2>
+      <h2 className="text-2xl font-bold text-gray-800 dark:text-white">Register New User</h2>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <div className="bg-white rounded-lg shadow-sm p-6">
-          <h3 className="text-lg font-semibold text-gray-800 mb-4">User Registration Form</h3>
+        <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm p-6">
+          <h3 className="text-lg font-semibold text-gray-800 dark:text-white mb-4">User Registration Form</h3>
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Name *</label>
+              <label className="block text-sm font-medium text-gray-700 dark:text-white mb-1">Name *</label>
               <input
                 type="text"
                 required
@@ -65,7 +65,7 @@ const Register = () => {
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Email *</label>
+              <label className="block text-sm font-medium text-gray-700 dark:text-white mb-1">Email *</label>
               <input
                 type="email"
                 required
@@ -76,7 +76,7 @@ const Register = () => {
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Password *</label>
+              <label className="block text-sm font-medium text-gray-700 dark:text-white mb-1">Password *</label>
               <input
                 type="password"
                 required
@@ -88,7 +88,7 @@ const Register = () => {
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Role *</label>
+              <label className="block text-sm font-medium text-gray-700 dark:text-white mb-1">Role *</label>
               <select
                 value={formData.role}
                 onChange={(e) => setFormData({ ...formData, role: e.target.value })}
@@ -102,7 +102,7 @@ const Register = () => {
 
             {formData.role === 'doctor' && (
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Specialization *</label>
+                <label className="block text-sm font-medium text-gray-700 dark:text-white mb-1">Specialization *</label>
                 <input
                   type="text"
                   required
@@ -114,7 +114,7 @@ const Register = () => {
             )}
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Phone</label>
+              <label className="block text-sm font-medium text-gray-700 dark:text-white mb-1">Phone</label>
               <input
                 type="tel"
                 value={formData.phone}
@@ -129,15 +129,15 @@ const Register = () => {
           </form>
         </div>
 
-        <div className="bg-white rounded-lg shadow-sm p-6">
-          <h3 className="text-lg font-semibold text-gray-800 mb-4">Registered Users</h3>
+        <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm p-6">
+          <h3 className="text-lg font-semibold text-gray-800 dark:text-white mb-4">Registered Users</h3>
           <div className="space-y-3">
             {users.map((user) => (
-              <div key={user._id} className="p-4 bg-gray-50 rounded-lg">
+              <div key={user._id} className="p-4 bg-gray-50 dark:bg-gray-700 rounded-lg">
                 <div className="flex justify-between items-start">
                   <div>
-                    <p className="font-medium text-gray-800">{user.name}</p>
-                    <p className="text-sm text-gray-600">{user.email}</p>
+                    <p className="font-medium text-gray-800 dark:text-white">{user.name}</p>
+                    <p className="text-sm text-gray-600 dark:text-gray-400">{user.email}</p>
                     {user.specialization && (
                       <p className="text-xs text-gray-500 mt-1">{user.specialization}</p>
                     )}

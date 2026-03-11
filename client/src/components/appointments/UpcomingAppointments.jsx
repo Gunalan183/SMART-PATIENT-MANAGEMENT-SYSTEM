@@ -2,8 +2,8 @@ import { formatDate } from '../../utils/helpers';
 
 const UpcomingAppointments = ({ appointments }) => {
   return (
-    <div className="bg-white rounded-lg shadow-sm p-6">
-      <h3 className="text-lg font-semibold text-gray-800 mb-4">Upcoming Appointments</h3>
+    <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm p-6">
+      <h3 className="text-lg font-semibold text-gray-800 dark:text-white mb-4">Upcoming Appointments</h3>
       <div className="space-y-3">
         {appointments.length === 0 ? (
           <p className="text-gray-500 text-center py-4">No upcoming appointments</p>

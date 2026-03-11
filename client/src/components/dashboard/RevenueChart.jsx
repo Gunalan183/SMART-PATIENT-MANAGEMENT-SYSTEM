@@ -8,8 +8,8 @@ const RevenueChart = ({ data }) => {
   }));
 
   return (
-    <div className="bg-white rounded-lg shadow-sm p-6">
-      <h3 className="text-lg font-semibold text-gray-800 mb-4">Monthly Revenue</h3>
+    <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm p-6">
+      <h3 className="text-lg font-semibold text-gray-800 dark:text-white mb-4">Monthly Revenue</h3>
       <ResponsiveContainer width="100%" height={250}>
         <BarChart data={chartData}>
           <CartesianGrid strokeDasharray="3 3" />

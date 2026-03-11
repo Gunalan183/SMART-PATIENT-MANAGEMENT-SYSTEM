@@ -111,20 +111,20 @@ const Dashboard = () => {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          <div className="bg-white rounded-lg shadow-sm p-6">
-            <h3 className="text-lg font-semibold text-gray-800 mb-4">Today's Appointments</h3>
+          <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm p-6">
+            <h3 className="text-lg font-semibold text-gray-800 dark:text-white mb-4">Today's Appointments</h3>
             <div className="space-y-3">
               {dashboardData?.todayAppointmentsList?.map((appointment) => (
-                <div key={appointment._id} className="p-3 bg-gray-50 rounded-lg">
+                <div key={appointment._id} className="p-3 bg-gray-50 dark:bg-gray-700 rounded-lg">
                   <div className="flex justify-between items-start">
                     <div>
-                      <p className="font-medium text-gray-800">{appointment.patient?.name}</p>
-                      <p className="text-sm text-gray-500">{appointment.patient?.patientId}</p>
-                      <p className="text-xs text-gray-500 mt-1">
+                      <p className="font-medium text-gray-800 dark:text-white">{appointment.patient?.name}</p>
+                      <p className="text-sm text-gray-500 dark:text-gray-400">{appointment.patient?.patientId}</p>
+                      <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">
                         {appointment.patient?.age}y • {appointment.patient?.gender}
                       </p>
                     </div>
-                    <span className="text-sm font-medium text-blue-600">{appointment.time}</span>
+                    <span className="text-sm font-medium text-blue-600 dark:text-blue-400">{appointment.time}</span>
                   </div>
                 </div>
               ))}

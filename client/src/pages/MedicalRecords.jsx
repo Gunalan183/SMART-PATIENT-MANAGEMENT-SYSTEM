@@ -119,7 +119,7 @@ const MedicalRecords = () => {
   return (
     <div className="space-y-6">
       <div className="flex justify-between items-center">
-        <h2 className="text-2xl font-bold text-gray-800">Medical Records</h2>
+        <h2 className="text-2xl font-bold text-gray-800 dark:text-white">Medical Records</h2>
         <button
           onClick={() => {
             resetForm();
@@ -132,7 +132,7 @@ const MedicalRecords = () => {
         </button>
       </div>
 
-      <div className="bg-white rounded-lg shadow-sm p-6">
+      <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm p-6">
         <Table columns={columns} data={records} />
       </div>
 
@@ -148,7 +148,7 @@ const MedicalRecords = () => {
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="grid grid-cols-2 gap-4">
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Patient *</label>
+              <label className="block text-sm font-medium text-gray-700 dark:text-white mb-1">Patient *</label>
               <select
                 required
                 value={formData.patient}
@@ -164,7 +164,7 @@ const MedicalRecords = () => {
               </select>
             </div>
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Doctor *</label>
+              <label className="block text-sm font-medium text-gray-700 dark:text-white mb-1">Doctor *</label>
               <select
                 required
                 value={formData.doctor}
@@ -182,7 +182,7 @@ const MedicalRecords = () => {
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Symptoms *</label>
+            <label className="block text-sm font-medium text-gray-700 dark:text-white mb-1">Symptoms *</label>
             <textarea
               required
               value={formData.symptoms}
@@ -193,7 +193,7 @@ const MedicalRecords = () => {
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Diagnosis *</label>
+            <label className="block text-sm font-medium text-gray-700 dark:text-white mb-1">Diagnosis *</label>
             <textarea
               required
               value={formData.diagnosis}
@@ -205,7 +205,7 @@ const MedicalRecords = () => {
 
           <div>
             <div className="flex justify-between items-center mb-2">
-              <label className="block text-sm font-medium text-gray-700">Medicines</label>
+              <label className="block text-sm font-medium text-gray-700 dark:text-white">Medicines</label>
               <button type="button" onClick={addMedicine} className="text-blue-600 text-sm">
                 + Add Medicine
               </button>
@@ -257,7 +257,7 @@ const MedicalRecords = () => {
 
           <div className="grid grid-cols-2 gap-4">
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Lab Tests</label>
+              <label className="block text-sm font-medium text-gray-700 dark:text-white mb-1">Lab Tests</label>
               <input
                 type="text"
                 value={formData.labTests}
@@ -266,7 +266,7 @@ const MedicalRecords = () => {
               />
             </div>
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Follow-up Date</label>
+              <label className="block text-sm font-medium text-gray-700 dark:text-white mb-1">Follow-up Date</label>
               <input
                 type="date"
                 value={formData.followUpDate}
@@ -277,7 +277,7 @@ const MedicalRecords = () => {
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Notes</label>
+            <label className="block text-sm font-medium text-gray-700 dark:text-white mb-1">Notes</label>
             <textarea
               value={formData.notes}
               onChange={(e) => setFormData({ ...formData, notes: e.target.value })}

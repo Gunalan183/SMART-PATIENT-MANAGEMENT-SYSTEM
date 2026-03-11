@@ -15,17 +15,17 @@ const RecentActivities = ({ activities }) => {
   };
 
   return (
-    <div className="bg-white rounded-lg shadow-sm p-6">
-      <h3 className="text-lg font-semibold text-gray-800 mb-4">Recent Activities</h3>
+    <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm p-6">
+      <h3 className="text-lg font-semibold text-gray-800 dark:text-white mb-4">Recent Activities</h3>
       <div className="space-y-4">
         {activities.length === 0 ? (
-          <p className="text-gray-500 text-center py-4">No recent activities</p>
+          <p className="text-gray-500 dark:text-gray-400 text-center py-4">No recent activities</p>
         ) : (
           activities.map((activity) => (
-            <div key={activity._id} className="flex items-center justify-between border-b border-gray-100 pb-3">
+            <div key={activity._id} className="flex items-center justify-between border-b border-gray-100 dark:border-gray-700 pb-3">
               <div className="flex-1">
-                <p className="font-medium text-gray-800">{activity.patient?.name}</p>
-                <p className="text-sm text-gray-500">
+                <p className="font-medium text-gray-800 dark:text-gray-100">{activity.patient?.name}</p>
+                <p className="text-sm text-gray-500 dark:text-gray-400">
                   Dr. {activity.doctor?.name} • {formatDate(activity.date)}
                 </p>
               </div>

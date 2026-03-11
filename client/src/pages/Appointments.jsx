@@ -156,7 +156,7 @@ const Appointments = () => {
   return (
     <div className="space-y-6">
       <div className="flex justify-between items-center">
-        <h2 className="text-2xl font-bold text-gray-800">Appointments</h2>
+        <h2 className="text-2xl font-bold text-gray-800 dark:text-white">Appointments</h2>
         <button
           onClick={() => {
             resetForm();
@@ -169,7 +169,7 @@ const Appointments = () => {
         </button>
       </div>
 
-      <div className="bg-white rounded-lg shadow-sm p-6">
+      <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm p-6">
         <Table columns={columns} data={appointments} />
       </div>
 

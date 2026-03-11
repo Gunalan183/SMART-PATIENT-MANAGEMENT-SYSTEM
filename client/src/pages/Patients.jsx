@@ -116,7 +116,7 @@ const Patients = () => {
   return (
     <div className="space-y-6">
       <div className="flex justify-between items-center">
-        <h2 className="text-2xl font-bold text-gray-800">Patients</h2>
+        <h2 className="text-2xl font-bold text-gray-800 dark:text-white">Patients</h2>
         <button
           onClick={() => {
             resetForm();
@@ -129,7 +129,7 @@ const Patients = () => {
         </button>
       </div>
 
-      <div className="bg-white rounded-lg shadow-sm p-6">
+      <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm p-6">
         <div className="mb-4">
           <input
             type="text"
@@ -155,7 +155,7 @@ const Patients = () => {
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="grid grid-cols-2 gap-4">
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Name *</label>
+              <label className="block text-sm font-medium text-gray-700 dark:text-white mb-1">Name *</label>
               <input
                 type="text"
                 required
@@ -165,7 +165,7 @@ const Patients = () => {
               />
             </div>
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Age *</label>
+              <label className="block text-sm font-medium text-gray-700 dark:text-white mb-1">Age *</label>
               <input
                 type="number"
                 required
@@ -175,7 +175,7 @@ const Patients = () => {
               />
             </div>
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Gender *</label>
+              <label className="block text-sm font-medium text-gray-700 dark:text-white mb-1">Gender *</label>
               <select
                 value={formData.gender}
                 onChange={(e) => setFormData({ ...formData, gender: e.target.value })}
@@ -187,7 +187,7 @@ const Patients = () => {
               </select>
             </div>
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Phone *</label>
+              <label className="block text-sm font-medium text-gray-700 dark:text-white mb-1">Phone *</label>
               <input
                 type="tel"
                 required
@@ -197,7 +197,7 @@ const Patients = () => {
               />
             </div>
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Blood Group *</label>
+              <label className="block text-sm font-medium text-gray-700 dark:text-white mb-1">Blood Group *</label>
               <select
                 value={formData.bloodGroup}
                 onChange={(e) => setFormData({ ...formData, bloodGroup: e.target.value })}
@@ -209,7 +209,7 @@ const Patients = () => {
               </select>
             </div>
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Allergies</label>
+              <label className="block text-sm font-medium text-gray-700 dark:text-white mb-1">Allergies</label>
               <input
                 type="text"
                 value={formData.allergies}
@@ -220,7 +220,7 @@ const Patients = () => {
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Address *</label>
+            <label className="block text-sm font-medium text-gray-700 dark:text-white mb-1">Address *</label>
             <textarea
               required
               value={formData.address}
@@ -231,10 +231,10 @@ const Patients = () => {
           </div>
 
           <div className="border-t pt-4">
-            <h4 className="font-medium text-gray-800 mb-3">Emergency Contact</h4>
+            <h4 className="font-medium text-gray-800 dark:text-white mb-3">Emergency Contact</h4>
             <div className="grid grid-cols-3 gap-4">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Name *</label>
+                <label className="block text-sm font-medium text-gray-700 dark:text-white mb-1">Name *</label>
                 <input
                   type="text"
                   required
@@ -247,7 +247,7 @@ const Patients = () => {
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Phone *</label>
+                <label className="block text-sm font-medium text-gray-700 dark:text-white mb-1">Phone *</label>
                 <input
                   type="tel"
                   required
@@ -260,7 +260,7 @@ const Patients = () => {
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Relation *</label>
+                <label className="block text-sm font-medium text-gray-700 dark:text-white mb-1">Relation *</label>
                 <input
                   type="text"
                   required
